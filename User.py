@@ -93,9 +93,13 @@ class FreeUser(User):
     def add_post(self):
         if len(self._posts) == 2:
             print("You have exceeded your allowed number of post. Upgrade to preminum")
-            exit()
+            return
         else:
             new_post = input("Post info")
+            self._posts.append(new_post)
+            User.post.append(new_post)
+            print(f"New post added for user")
+            return 
 
     
     
